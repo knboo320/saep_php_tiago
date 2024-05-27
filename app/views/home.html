@@ -1,0 +1,36 @@
+<div class="homePage">
+    <header class="homePage_header">
+        {% for professor in professores %}
+        <p>{{professor.nome}}</p>
+        {% endfor %}
+        <a href="?pagina=home&metodo=logout">Sair</a>
+    </header>
+    <main class="homePage_content">
+        <div class="homePage_content_cadastroTurma">
+            <a href="?pagina=cadastrarTurma">Cadastrar Turma</a>
+        </div>
+        <div class="homePage_content_turmas">
+            <h2>Turmas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Nome</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for turma in turmas %}
+                    <tr>
+                        <td class="idTurma"></td>
+                        <td>{{turma.nome}}</td>
+                        <td><button class="buttonExcluir" onclick="redirectButtonExcluir('{{turma.nome}}')">Excluir</button>
+                            <button class="buttonVisualizar" onclick="redirectButtonVisualizar('{{turma.nome}}')">Visualizar</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>

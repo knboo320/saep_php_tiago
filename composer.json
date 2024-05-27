@@ -1,0 +1,18 @@
+{
+    "name": "13483093931/saep2",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "13483093931\\Saep2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nicollas"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "twig/twig": "^3.10"
+    }
+}

@@ -1,0 +1,42 @@
+<div class="turmaPage">
+    <header class="turmaPage_header">
+        {% for professor in professores %}
+        <p>{{professor.nome}}</p>
+        {% endfor %}
+        <a href="?pagina=home&metodo=logout">Sair</a>
+    </header>
+    <main class="turmaPage_content">
+        <div class="turmaPage_content_cadastroTurma">
+            <a href="?pagina=cadastrarAtividade">Cadastrar Atividade</a>
+        </div>
+        <div class="turmaPage_content_turmas">
+            {% for atividade in atividades %}
+                {% if loop.first %}
+                    <h3>Turma: {{atividade.turma}}</h3>
+                {% endif %}
+            {% endfor %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if atividades is empty %}
+                    <tr>
+                        <td colspan="2">Nenhuma atividade cadastrada</td>
+                    </tr>
+                    {% else %}
+                    {% for atividade in atividades %}
+                    <tr>
+                        <td class="idAtividade"></td>
+                        <td>{{ atividade.titulo }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
